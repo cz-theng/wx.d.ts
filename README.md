@@ -1,2 +1,2 @@
 # wx.d.ts
-Typescript for WXMiniGame
+Typescript's .d.ts for WXMiniGame
