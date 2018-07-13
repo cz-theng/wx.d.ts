@@ -136,6 +136,8 @@ func genTS(wx *WX) (funs string, err error) {
 			case "string[]":
 				name = "strs"
 				break
+			default:
+				name = arg.Name
 			}
 			p += s + name + ": " + arg.Type
 			s = ", "
