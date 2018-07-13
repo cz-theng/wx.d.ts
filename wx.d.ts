@@ -11,7 +11,7 @@ function addPhoneContact(obj: object): void;
 /**
 * 将 ArrayBuffer 数据转成 Base64 字符串 
 */ 
-function arrayBufferToBase64(: string[]): void;
+function arrayBufferToBase64(arraybuffer: string[]): void;
 
 /**
 * 部分接口需要获得同意后才能调用。此类接口调用时，如果用户未授权过，会弹窗询问用户，用户点击同意后方可调用接口。如果用户点了拒绝，则短期内调用不会出现弹窗，而是直接进入 fail 回调。用户可以在小程序设置界面中修改对该小程序的授权信息。本接口用于提前向用户发起授权，调用后会立刻弹窗询问用户是否同意小程序使用某项功能或获取用户的某些数据，但不会实际调用接口。如果用户之前已经同意，则不会出现弹窗，直接返回成功。 
@@ -21,7 +21,7 @@ function authorize(obj: object): void;
 /**
 * 将 Base64 字符串转成 ArrayBuffer 数据 
 */ 
-function base64ToArrayBuffer(: string): void;
+function base64ToArrayBuffer(base64: string): void;
 
 /**
 * 判断小程序的API，回调，参数，组件等是否在当前版本可用。 
@@ -106,7 +106,7 @@ function createAnimation(obj: object): void;
 /**
 * 创建并返回 audio 上下文 `audioContext` 对象 
 */ 
-function createAudioContext(: string): void;
+function createAudioContext(audioid: string): void;
 
 /**
 * 连接低功耗蓝牙设备 
@@ -116,7 +116,7 @@ function createBLEConnection(obj: object): void;
 /**
 * 创建 canvas 绘图上下文（指定 canvasId） 
 */ 
-function createCanvasContext(: string): void;
+function createCanvasContext(canvasid: string): void;
 
 /**
 * 创建并返回绘图上下文。 
@@ -126,7 +126,7 @@ function createContext(): void;
 /**
 * 创建并返回 map 上下文 `mapContext` 对象 
 */ 
-function createMapContext(: string): void;
+function createMapContext(mapid: string): void;
 
 /**
 *  
@@ -136,7 +136,7 @@ function createSelectorQuery(): void;
 /**
 * 创建并返回 video 上下文 `videoContext` 对象 
 */ 
-function createVideoContext(: string): void;
+function createVideoContext(videoid: string): void;
 
 /**
 * 下载文件资源到本地。客户端直接发起一个 HTTP GET 请求，返回文件的本地临时路径。 
@@ -261,7 +261,7 @@ function getStorageInfoSync(): void;
 /**
 * 从本地缓存中同步获取指定 key 对应的内容。 
 */ 
-function getStorageSync(: string): void;
+function getStorageSync(key: string): void;
 
 /**
 * 获取系统信息。 
@@ -341,87 +341,87 @@ function notifyBLECharacteristicValueChange(obj: object): void;
 /**
 * 监听加速度数据，频率：5次/秒，接口调用后会自动开始监听，可使用 `wx.stopAccelerometer` 停止监听。 
 */ 
-function onAccelerometerChange(: function): void;
+function onAccelerometerChange(callback: function): void;
 
 /**
 * 监听低功耗蓝牙设备的特征值变化。必须先启用`notify`接口才能接收到设备推送的notification。 
 */ 
-function onBLECharacteristicValueChange(: function): void;
+function onBLECharacteristicValueChange(callback: function): void;
 
 /**
 * 监听低功耗蓝牙连接的错误事件，包括设备丢失，连接异常断开等等。 
 */ 
-function onBLEConnectionStateChange(: function): void;
+function onBLEConnectionStateChange(callback: function): void;
 
 /**
 * 监听音乐暂停。 
 */ 
-function onBackgroundAudioPause(: string): void;
+function onBackgroundAudioPause(callback: string): void;
 
 /**
 * 监听音乐播放。 
 */ 
-function onBackgroundAudioPlay(: string): void;
+function onBackgroundAudioPlay(callback: string): void;
 
 /**
 * 监听音乐停止。 
 */ 
-function onBackgroundAudioStop(: string): void;
+function onBackgroundAudioStop(callback: string): void;
 
 /**
 * 监听 `iBeacon` 服务的状态变化 
 */ 
-function onBeaconServiceChange(: function): void;
+function onBeaconServiceChange(callback: function): void;
 
 /**
 * 监听 `iBeacon` 设备的更新事件 
 */ 
-function onBeaconUpdate(: function): void;
+function onBeaconUpdate(callback: function): void;
 
 /**
 * 监听蓝牙适配器状态变化事件 
 */ 
-function onBluetoothAdapterStateChange(: function): void;
+function onBluetoothAdapterStateChange(callback: function): void;
 
 /**
 * 监听寻找到新设备的事件 
 */ 
-function onBluetoothDeviceFound(: function): void;
+function onBluetoothDeviceFound(callback: function): void;
 
 /**
 * 监听罗盘数据，频率：5次/秒，接口调用后会自动开始监听，可使用`wx.stopCompass`停止监听。 
 */ 
-function onCompassChange(: function): void;
+function onCompassChange(callback: function): void;
 
 /**
 * 监听网络状态变化。 
 */ 
-function onNetworkStatusChange(: function): void;
+function onNetworkStatusChange(callback: function): void;
 
 /**
 * 监听WebSocket关闭。 
 */ 
-function onSocketClose(: string): void;
+function onSocketClose(callback: string): void;
 
 /**
 * 监听WebSocket错误。 
 */ 
-function onSocketError(: string): void;
+function onSocketError(callback: string): void;
 
 /**
 * 监听WebSocket接受到服务器的消息事件。 
 */ 
-function onSocketMessage(: function): void;
+function onSocketMessage(callback: function): void;
 
 /**
 * 监听WebSocket连接打开事件。 
 */ 
-function onSocketOpen(: string): void;
+function onSocketOpen(callback: string): void;
 
 /**
 * 监听用户主动截屏事件，用户使用系统截屏按键截屏时触发此事件 
 */ 
-function onUserCaptureScreen(: function): void;
+function onUserCaptureScreen(callback: function): void;
 
 /**
 * 初始化蓝牙适配器 
@@ -506,12 +506,12 @@ function removeStorage(obj: object): void;
 /**
 * 从本地缓存中同步移除指定 key 。 
 */ 
-function removeStorageSync(: string): void;
+function removeStorageSync(key: string): void;
 
 /**
 * 自定义分析数据上报接口。使用前，需要在小程序管理后台自定义分析中新建事件，配置好事件名与字段。 
 */ 
-function reportAnalytics(: string, : string): void;
+function reportAnalytics(eventname: string, data: string): void;
 
 /**
 * 最终发送给服务器的数据是 String 类型，如果传入的 data 不是 String 类型，会被转换成 String 。转换规则如下： 
@@ -591,7 +591,7 @@ function setStorage(obj: object): void;
 /**
 * 将 data 存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个同步接口。 
 */ 
-function setStorageSync(: string, : object|string): void;
+function setStorageSync(key: string, data: object|string): void;
 
 /**
 * ​显示操作菜单 
