@@ -1,4 +1,4 @@
-window.API.JSAPI = {
+{
   "interfaces": [
     {
       "type": "object",
