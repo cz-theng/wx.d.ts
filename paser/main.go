@@ -101,7 +101,43 @@ func genTS(wx *WX) (funs string, err error) {
 		p := ""
 		s := ""
 		for _, arg := range api.Params {
-			p += s + arg.Name + ": " + arg.Type
+			name := ""
+			switch arg.Name {
+			case "boolean":
+				name = "bl"
+				break
+			case "float":
+				name = "fp"
+				break
+			case "function":
+				name = "fun"
+				break
+			case "hexcolor":
+				name = "hc"
+				break
+			case "int":
+				name = "i"
+				break
+			case "integer":
+				name = "i"
+				break
+			case "number":
+				name = "num"
+				break
+			case "object":
+				name = "obj"
+				break
+			case "object[]":
+				name = "objs"
+				break
+			case "string":
+				name = "str"
+				break
+			case "string[]":
+				name = "strs"
+				break
+			}
+			p += s + name + ": " + arg.Type
 			s = ", "
 		}
 		r := ": void"
