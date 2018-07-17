@@ -140,7 +140,14 @@ func genTS(wx *WX) (funs string, err error) {
 				name = arg.Name
 				break
 			}
-			p += s + name + ": " + arg.Type
+
+			argType := arg.Type
+			switch arg.Type {
+			case "object":
+				argType = "any"
+			}
+
+			p += s + name + ": " + argType
 			s = ", "
 		}
 		r := ": void"
